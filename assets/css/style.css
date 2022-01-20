@@ -1,0 +1,114 @@
+/* font faces */
+
+
+@font-face {
+    font-family: "primary";
+    src: url('/Adam/fonts/typography/baskervville.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "secondary";
+    src: url('/Adam/fonts/typography/lato.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* variables */
+
+:root {
+
+    /* standard colors */
+    --white: white;
+    --light: rgb(245, 245, 245);
+    --lightgray: rgb(220, 220, 220);
+    --gray: rgb(120, 120, 120);
+    --darkgray: rgb(80, 80, 80);
+    --dark: rgb(50, 50, 50);
+    --black: black;
+
+    /* common colors */
+    --success: #198754;
+    --warning: #ffc107;
+    --danger: #e26d7b;
+    --info: #0d6efd;
+
+    /* main colors */
+    --main-light: rgb(250, 250, 250);
+    --main: rgb(240, 240, 240);
+    --main-dark: rgb(230, 230, 230);
+
+    /* font sizes */
+    --font-size-mobile: 3vw;
+    --font-size-tablet: 16px;
+    --font-size-desktop: 16px;
+}
+
+/* body */
+
+body {
+    font-family: "secondary";
+    letter-spacing: 0.1rem;
+    overflow-x: hidden;
+    background: var(--white);
+    color: var(--dark);
+}
+
+/* btn */
+
+.btn {
+    font-family: "primary";
+    border-radius: 2rem;
+    text-transform: capitalize;
+    padding: 0.8rem 2rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-width: 0.3rem;
+    text-align: center;
+    /* box-shadow: 0rem 0.8rem 0.8rem var(--lightgray); */
+}
+
+.btn-main {
+    color: var(--dark);
+}
+
+.btn-main-dark {
+    color: var(--dark);
+}
+
+/* inputs */
+
+input,
+textarea,
+select {
+    border-radius: 0rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: solid 0.1rem var(--lightgray);
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-family: "primary";
+    /* background: linear-gradient(-45deg, transparent 1rem, var(--white) 0); */
+}
+
+/* typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "primary";
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+p {
+    /* font-family: "secondary"; */
+    line-height: 1.8rem;
+    color: var(--gray);
+}
