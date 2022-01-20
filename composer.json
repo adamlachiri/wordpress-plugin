@@ -1,0 +1,19 @@
+{
+    "name": "professional/adamlachiri",
+    "description": "My wordpress plugin",
+    "type": "plugin",
+    "license": "GPL",
+    "authors" : [
+        {
+        "name": "Adam Lachiri",
+        "email": "adamlachiripro@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "adamlachiri\\" : "./app"
+        }
+    }
+}
