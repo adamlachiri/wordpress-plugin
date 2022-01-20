@@ -6,7 +6,7 @@
 
 namespace adamlachiri;
 
-class CustomPostType
+class PostType
 {
 
     // props

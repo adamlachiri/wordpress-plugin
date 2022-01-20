@@ -12,4 +12,9 @@ class Activate
     {
         flush_rewrite_rules();
     }
+
+    public static function register()
+    {
+        register_activation_hook(__FILE__, [Self::class, "activate"]);
+    }
 }

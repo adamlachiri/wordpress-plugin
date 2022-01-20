@@ -8,7 +8,7 @@
 Plugin Name: Adam Lachiri
 Plugin URI: https://github.com/adamlachiri/wordpress-plugin
 Description: my personal wordpress plugin
-Version: 1.1
+Version: 1.12
 Author: Adam Lachiri 
 */
 
@@ -22,32 +22,39 @@ if (file_exists(dirname(__FILE__) . "/vendor/autoload.php")) {
     require_once dirname(__FILE__) . "/vendor/autoload.php";
 }
 
+// config
+if (file_exists(dirname(__FILE__) . "/config.php")) {
+    require_once dirname(__FILE__) . "/config.php";
+}
+
+// test
+
 // imports
 use adamlachiri\Activate;
-use adamlachiri\CustomPostType;
+use adamlachiri\PostType;
 use adamlachiri\Deactivate;
 use adamlachiri\LoadAssets;
 use adamlachiri\Taxonomy;
 
 // activation
-register_activation_hook(__FILE__, [Activate::class, "activate"]);
+Activate::register();
 
 // deactivation
-register_deactivation_hook(__FILE__, [Deactivate::class, "deactivate"]);
+Deactivate::register();
 
 // loading assets
 LoadAssets::enqueue_scripts();
 
 // add custom post types
-$book = new CustomPostType();
+$book = new PostType();
 // props
 $book->singular_name = "";
 $book->plural_name = "";
 $book->description = "";
 $book->menu_icon = "";
 
-// create
-$book->create();
+// create the custom post type
+// $book->create();
 
 
 // add taxonomy
@@ -58,5 +65,5 @@ $taxonomy->plural_name = "";
 $taxonomy->description = "";
 $taxonomy->post_types = [];
 
-// create
-$taxonomy->create();
+// create the taxonomy
+// $taxonomy->create();

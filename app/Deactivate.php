@@ -12,4 +12,9 @@ class Deactivate
     {
         flush_rewrite_rules();
     }
+
+    public static function register()
+    {
+        register_deactivation_hook(__FILE__, [Self::class, "deactivate"]);
+    }
 }

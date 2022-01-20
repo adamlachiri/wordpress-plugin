@@ -9,17 +9,10 @@ namespace adamlachiri;
 class LoadAssets
 {
 
-    public static function enqueue_scripts()
-    {
-        add_action("wp_enqueue_scripts", [Self::class, "register_styles"]);
-        add_action("wp_enqueue_scripts", [Self::class, "register_scripts"]);
-    }
-
-
     public static function register_styles()
     {
         // custom css
-        wp_register_style("custom-css",  plugins_url("../assets/css/style.css", __FILE__), array(), false, "all");
+        wp_register_style("custom-css",  PLUGIN_URL . "/assets/css/style.css", array(), false, "all");
         wp_enqueue_style("custom-css");
 
         // adam css
@@ -34,11 +27,17 @@ class LoadAssets
     public static function register_scripts()
     {
         // custom css
-        wp_register_style("custom-css",  plugins_url("../assets/css/style.css", __FILE__), array(), false, "all");
+        wp_register_style("custom-css",  PLUGIN_URL . "/assets/css/style.css", array(), false, "all");
         wp_enqueue_style("custom-css");
 
         // adam css
         wp_register_style("adam-css", "http://localhost/Adam/css/style.css", array(), false, "all");
         wp_enqueue_style("adam-css");
+    }
+
+    public static function enqueue_scripts()
+    {
+        add_action("wp_enqueue_scripts", [Self::class, "register_styles"]);
+        add_action("wp_enqueue_scripts", [Self::class, "register_scripts"]);
     }
 }
